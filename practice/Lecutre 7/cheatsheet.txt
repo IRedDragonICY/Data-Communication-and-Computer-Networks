@@ -1,0 +1,24 @@
+1. Static Routing
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ip route 172.16.10.0 255.255.255.0 192.168.1.2
+2. RIP
+router rip
+ version 2
+ network 192.168.1.0
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ ip router rip
+3. EIGRP
+router eigrp 100
+ network 192.168.1.0 0.0.0.255
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ ip router eigrp 100
+4. OSPF
+router ospf 1
+ network 192.168.1.0 0.0.0.255 area 0
+interface FastEthernet0/0
+ ip address 192.168.1.1 255.255.255.0
+ ip router ospf 1
+
