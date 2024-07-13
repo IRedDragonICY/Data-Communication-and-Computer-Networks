@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar.com</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            background: #fff;
+            color: #ffafbd;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:before, .button:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            background: #fff;
+            border: 2px solid #ffafbd;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .button:before {
+            left: -30px;
+            transform-origin: right;
+            transform: rotateY(180deg) translateY(-50%);
+        }
+
+        .button:after {
+            right: -30px;
+            transform-origin: left;
+            transform: rotateY(180deg) translateY(-50%);
+        }
+
+        .button:hover:before {
+            left: 5px;
+            transform: rotateY(0deg) translateY(-50%);
+        }
+
+        .button:hover:after {
+            right: 5px;
+            transform: rotateY(0deg) translateY(-50%);
+        }
+
+        .button:hover {
+            background: #ffc3a0;
+            color: #fff;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">belajar.com</div>
+        <div class="description" id="description">Tempatnya belajar dan berbagi ilmu</div>
+        <button class="button" onclick="startLearning()">Mulai Belajar</button>
+    </div>
+    <div class="copyright">© Mohammad Farid Hendianto - NIM 2200018401</div>
+
+    <script>
+        function startLearning() {
+            document.getElementById("description").innerText = "Belajar bersama Ndik";
+        }
+    </script>
+</body>
+</html>

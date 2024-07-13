@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsi.com</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #121212;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .description {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .button {
+            background: #1e88e5;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            background: #1565c0;
+        }
+
+        .button:before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -100%;
+            left: -100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            transform: rotate(45deg);
+        }
+
+        .button:hover:before {
+            top: 0;
+            left: 0;
+        }
+
+
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.2; }
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="network"></div>
+    <div class="container">
+        <div class="logo">responsi.com</div>
+        <div class="description" id="description">Belajar Komunikasi Data dan Jaringan Komputer</div>
+        <button class="button" onclick="startLearning()">Mulai Belajar</button>
+    </div>
+    <div class="copyright">© Mohammad Farid Hendianto - NIM 2200018401</div>
+
+    <script>
+        function startLearning() {
+            document.getElementById("description").innerText = "Responsi kode A bersama Ndik tentang Cisco";
+            document.querySelector('.button').innerText = "Responsi selesai dituntaskan...";
+        }
+    </script>
+</body>
+</html>
